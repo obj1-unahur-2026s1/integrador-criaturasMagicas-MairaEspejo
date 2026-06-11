@@ -1,0 +1,13 @@
+import criaturas.*
+describe "test de criaturas"{
+    const duende1 = new Duende(poderMagico=10,astucia=5,rol=hechicero)
+    const hada1 = new Hada(poderMagico=10,astucia=5,rol=guardian)
+    const colonia1 = new Colonia(criaturas=[duende1,hada1])
+    const castillo1 = new Castillo(colonia=colonia1)
+
+    test "castillo 1 tiene podes defensivo de 200"
+    assert.equals(200,castillo1.poderDefensivo())
+
+    test "colonia tiene un poder ofensivo de 310"
+    assert.equals(1110+200,colonia.poderOfensivo())
+}
